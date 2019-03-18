@@ -20,7 +20,7 @@
     "pug": "^2.0.3"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node init.js --delay 2"
+    "start": "nodemon --exec babel-node init-Re.js --delay 2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.1",
