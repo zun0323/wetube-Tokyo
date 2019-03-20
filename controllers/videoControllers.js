@@ -21,11 +21,17 @@ export const serach = (req, res) => {
 export const getUplode = (req, res) =>
   res.render("uplode", { pageTitle: "uplode" });
 
-export const postUplode = (req, res) => {
+export const postUplode = async (req, res) => {
   const {
-    body: { file, title, description }
+    body: { title, description },
+    file: { path }
   } = req;
-  res.redirect(routes.videoDetail(334232));
+  const newVideo = await Video.create({
+    fileUrl: path,
+    title,
+    description
+  });
+  res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = (req, res) =>
